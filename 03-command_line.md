@@ -19,7 +19,37 @@ Here's a list of items with which you should be familiar:
 
 Make a cheat sheet for yourself: a list of at least **ten** commands and what they do.  (Use the 8 items above and add a couple of your own.)  
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+> >  
+* show current working directory path
+
+`pwd`
+* creating a directory
+
+`mkdir <dirname>`
+* deleting a directory
+
+`rm -r <dirname>`
+* creating a file using `touch` command
+
+`touch <filename>`
+* deleting a file
+
+`rm <filename>`
+* renaming a file
+
+`mv <oldname> <newname>`
+* listing hidden files
+
+`ls -a`
+* copying a file from one directory to another
+
+`cp <src> <dest>`
+* display content of text file
+
+`cat <filename>`
+* display the user manual 
+
+`man <keyword>`
 
 ---
 
@@ -34,15 +64,38 @@ What do the following commands do:
 `ls -t`  
 `ls -Glp`  
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
-
+> > 
+* `ls`
+lists the files and directories inside current working directory
+* `ls -a` 
+lists all contents of current directory including hidden files and directories
+* `ls -l` 
+lists all contents of current directory in long format
+* `ls -lh`
+lists all contents of current directory in long format with readable file size
+* `ls -lah` 
+lists all contents of current directory including hidden files and directories in long format with readable file size
+* `ls -t` 
+lists all contents of current directory ordered by the time they were last modified 
+* `ls -Glp`
+lists all contents of current directory in long format and enables colorized output. Also, writes a slash (`/`) after each filename if that file is a directory
 ---
 
 ### Q3.  More List Files in Unix  
 
 Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) and pick 5 of your favorites:
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+> > 
+* `ls -lc`
+lists all contents of current directory in long format using time when file status was last changed
+* `ls -m`
+lists the names as a comma separated list
+* `ls -lr`
+lists the names in reverse order
+* `ls -1`
+lists each entry on a line
+* `ls -lL`
+lists the file or directory referenced by a symbolic link
 
 ---
 
@@ -50,7 +103,12 @@ Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) 
 
 What does `xargs` do? Give an example of how to use it.
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+> > 
+`xargs` reads input from standard input and executes the command supplied to it as argument one or more times based on the input read
+
+Example: `find . -type f -name '*.py' | xargs grep -l "Sakina"`
+
+
 
  
 
