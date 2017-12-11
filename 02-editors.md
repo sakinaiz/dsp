@@ -90,15 +90,18 @@ What terminal editor will be your preferred choice of use? How did you make your
 What graphical editor will you use? How did you make your decision? What are some interesting features of your editor? What are some useful keyboard shortcuts for your editor? How do you customize your editor?
 
 >> **Spyder** - since I have used it before for programming in Python. 
+
 Interesting Features:  
-- Syntax highlighting and code completion. 
-- Ability to explore variables from a GUI. 
-Keyboard shortcuts. 
+- Syntax highlighting and code completion
+- Ability to explore variables from a GUI 
+
+Keyboard shortcuts
 - *Command+L*: clears console
 - *Command 1*: toggle comment
 - *Ctrl+Space*: code completion
 - *Command+I*: inspect current object
 - *F9*: Run current line
 
-Customize Editor. 
+Customize Editor
+
 Can create a template for new modules which has date created and author name. It can also import libraries which are used often. 
