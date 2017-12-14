@@ -1,6 +1,7 @@
 # Based on materials copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
-
+# Pre-work: Question 6
+# Author: Sakina Zabuawala
 
 def donuts(count):
     """
@@ -18,8 +19,8 @@ def donuts(count):
     >>> donuts(99)
     'Number of donuts: many'
     """
-    raise NotImplementedError
-
+#    raise NotImplementedError
+    return ('Number of donuts: ' + str(count if count<10 else  "many"))
 
 def both_ends(s):
     """
@@ -37,7 +38,12 @@ def both_ends(s):
     >>> both_ends('xyz')
     'xyyz'
     """
-    raise NotImplementedError
+    #raise NotImplementedError
+    if len(s)<2:
+        return('')
+    else:
+        return(s[:2]+s[-2::])
+        
 
 
 def fix_start(s):
@@ -56,8 +62,8 @@ def fix_start(s):
     >>> fix_start('donut')
     'donut'
     """
-    raise NotImplementedError
-
+    #raise NotImplementedError
+    return (s[0]+"".join(['*' if char==s[0] else char for char in s[1:]]))
 
 def mix_up(a, b):
     """
@@ -74,7 +80,8 @@ def mix_up(a, b):
     >>> mix_up('pezzy', 'firm')
     'fizzy perm'
     """
-    raise NotImplementedError
+    #raise NotImplementedError
+    return(b[:2]+a[2:]+" "+a[:2]+b[2:])
 
 
 def verbing(s):
@@ -91,8 +98,11 @@ def verbing(s):
     >>> verbing('do')
     'do'
     """
-    raise NotImplementedError
-
+    #raise NotImplementedError
+    if len(s)<3:
+        return s
+    else:
+        return(s+"ing" if s[-3:]!="ing" else s+"ly")
 
 def not_bad(s):
     """
@@ -111,8 +121,13 @@ def not_bad(s):
     >>> not_bad("It's bad yet not")
     "It's bad yet not"
     """
-    raise NotImplementedError
-
+    #raise NotImplementedError
+    not_idx = s.find("not")
+    bad_idx = s.find("bad")
+    if not_idx<bad_idx:
+        return s[:not_idx]+"good"+s[bad_idx+3:]
+    else:
+        return s
 
 def front_back(a, b):
     """
@@ -130,4 +145,11 @@ def front_back(a, b):
     >>> front_back('Kitten', 'Donut')
     'KitDontenut'
     """
-    raise NotImplementedError
+    #raise NotImplementedError
+    lena = len(a)
+    lenb = len(b)
+    a_front = a[:lena//2] if lena%2==0 else a[:lena//2+1]
+    a_back = a[lena//2:] if lena%2==0 else a[lena//2+1:]
+    b_front = b[:lenb//2] if lenb%2==0 else b[:lenb//2+1]
+    b_back = b[lenb//2:] if lenb%2==0 else b[lenb//2+1:]
+    return(a_front+b_front+a_back+b_back)
