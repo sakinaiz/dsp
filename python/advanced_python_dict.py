@@ -17,7 +17,7 @@ faculty_dict = {}
 title_end = -1*len(' of Biostatistics')
 for row in faculty_data:
     faculty_lname = row[0].split()[-1]
-    faculty_info = [row[1].replace('.',''), row[2][:title_end], row[3]]
+    faculty_info = [row[1].strip().replace('.',''), row[2][:title_end], row[3].lower()]
     if faculty_lname not in faculty_dict:
         faculty_dict[faculty_lname] = []
     faculty_dict[faculty_lname].append(faculty_info)
@@ -34,7 +34,7 @@ for row in faculty_data:
     fname = faculty_name[0] if len(faculty_name[0].replace('.',''))>1 else faculty_name[1]
     lname = faculty_name[-1]
     name_key = (fname, lname)
-    faculty_info = [row[1].replace('.',''), row[2][:title_end], row[3]]
+    faculty_info = [row[1].strip().replace('.',''), row[2][:title_end], row[3]]
     if name_key not in professor_dict:
         professor_dict[name_key] = faculty_info
   
@@ -43,6 +43,6 @@ for k in list(professor_dict)[:3]:
     print({k:professor_dict[k]})
 
 # Q8. Sort by last name    
-professor_sort = sorted(professor_dict.items(), key=lambda item:item[0][1])
+professor_sort = sorted(professor_dict.items(), key=lambda item:item[0][-1])
 for k in professor_sort[:3]:
     print(k)

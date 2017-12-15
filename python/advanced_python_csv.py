@@ -14,6 +14,7 @@ with open('faculty.csv') as fid:
 
 # Q5. Write emails to csv file        
 with open('emails.csv', 'w') as fid:
+    fid.write('Faculty emails\n')
     for email in faculty_email:
         fid.write(email+'\n')
     

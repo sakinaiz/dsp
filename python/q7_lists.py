@@ -100,4 +100,11 @@ def linear_merge(list1, list2):
     ['aa', 'aa', 'aa', 'bb', 'bb']
     """
     #raise NotImplementedError
-    return sorted(list1+list2)
+    out = []
+    while len(list1) and len(list2):
+        if list1[0]<list2[0]:
+            out.append(list1.pop(0))
+        else:
+            out.append(list2.pop(0))
+    
+    return out+list1+list2
